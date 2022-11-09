@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="categ_h">
+    <h1 class="text-center">Наш ассортимент роз</h1>
+</div>
+
+<div class="container text-center">
+    <div class="row">
+
+        {% for rose_type in rose_types %}
+        <div class="col-6 col-sm-3">
+            <br>
+            <img src="{{ rose_type.img.url }}" alt="">
+            <br>
+
+            <p>{{rose_type.title_type}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="btn_all_roses text-center">
+    <a href="{% url 'catalog:all_categ_roses' %}">
+        <button type="button" class="btn btn-primary">Показать весь ассортимент роз</button>
+    </a>
+</div>
+
+{% endblock %}

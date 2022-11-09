@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<div class=" head_roses container text-center">
+    <div class="row align-items-start">
+        <div class="col">
+            <h1>Розы</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container_rose">
+    <div class="row">
+
+        {% for rose in roses %}
+        <div class="col-6 col-sm-3 text-center">
+            <img src="{{ rose.img.url }}" alt="" width="200" height="200">
+            <a href="{% url 'catalog:rose_description' rose.title %}">
+                <p class="title_price">{{rose.title}}</p>
+            </a>
+            <p class="price">{{rose.price}} MDL</p>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

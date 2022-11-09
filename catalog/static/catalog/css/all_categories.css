@@ -1,0 +1,43 @@
+.categ_h {
+    margin: 50px 80px 80px 80px;
+}
+
+.btn_all_roses {
+    margin-top: 50px;
+    height: 200px;
+}
+
+.container_rose {
+    width: 1000px;
+    height: 1000px;
+    margin-left: 200px;
+
+}
+
+.price {
+    font-size: 15px;
+    line-height: 1%;
+}
+
+.title_price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.head_roses {
+    height: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.head_text {
+    vertical-align: middle;
+}
+
+.img_description {
+    border-radius: 8px;
+}
+
+.col_description {
+    margin-left: 100px;
+}
