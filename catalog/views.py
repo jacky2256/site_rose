@@ -14,9 +14,24 @@ def all_categories(request):
 
 def all_categ_roses(request):
 
-    roses = models.Roses.objects.all()
+    if request.GET.get('all'):
+        roses = models.Roses.objects.all()
+        return render(request, 'catalog/all_categ_roses.html', {'roses': roses})
 
-    #roses = models.Roses.objects.filter(sort='флорибунда')
+    sort_key = list(request.GET.keys())
+    print(sort_key[0])
+
+    sort_ru = {
+        'floribunda': 'флорибунда',
+        'english': 'Розы английской селекции',
+        'bardiurnie': 'Бардюрные (патио) розы',
+        'pochvopocrovnie': 'Почвопокровные розы',
+        'chainogibrid': 'чайно-гибридные',
+        'shtampovie': 'Штамповые розы',
+        'pletistie': 'Плетистые розы',
+    }
+
+    roses = models.Roses.objects.filter(sort=sort_ru.get(sort_key[0]))
 
     return render(request, 'catalog/all_categ_roses.html', {'roses': roses})
 
@@ -25,5 +40,4 @@ def rose_description(request, roses_title):
 
     print(roses_title)
     rose = get_object_or_404(models.Roses, title=roses_title)
-    #roses = models.Roses.objects.all()
     return render(request, 'catalog/rose_description.html', {'rose': rose})

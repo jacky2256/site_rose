@@ -4,8 +4,9 @@ from django.db import models
 
 
 class Catalog(models.Model):
-    title_type = models.CharField(max_length=100)
+    title_ru = models.CharField(max_length=100)
     img = models.ImageField(upload_to='home/img')
+    title_en = models.CharField(max_length=100, default='')
 
     def __str__(self) -> str:
-        return self.title_type
+        return self.title_ru

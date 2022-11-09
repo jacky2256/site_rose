@@ -39,11 +39,18 @@
             <br>
             <img src="{{ rose_type.img.url }}" alt="">
             <br>
-
-            <p>{{rose_type.title_type}}</p>
+            <form action="{% url 'catalog:all_categ_roses' %}">
+                <input type="submit" name="{{rose_type.title_en}}" value="{{rose_type.title_ru}}" class="btn btn-light">
+            </form>
         </div>
         {% endfor %}
     </div>
+</div>
+
+<div class="btn_all_roses text-center">
+    <form action="{% url 'catalog:all_categ_roses' %}">
+        <input type="submit" name="all" value="Показать весь ассортимент роз" class="btn btn-primary">
+    </form>
 </div>
 
 <div class="request text-center">
