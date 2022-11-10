@@ -15,11 +15,12 @@
 
         {% for rose in roses %}
         <div class="col-6 col-sm-3 text-center">
-            <img src="{{ rose.img.url }}" alt="" width="200" height="200">
             <a href="{% url 'catalog:rose_description' rose.title %}">
+                <img src="{{ rose.img.url }}" alt="" width="200" height="200">
                 <p class="title_price">{{rose.title}}</p>
             </a>
             <p class="price">{{rose.price}} MDL</p>
+            <br>
         </div>
         {% endfor %}
 
